@@ -2,7 +2,7 @@
 <html lang='en'>
 
 <head>
-	<title>EzCiphey</title>
+	<title>EzCiphey Results</title>
 	<meta charset="UTF-8">
 	<meta property="og:title" content="EzCiphey tool by DJ Stomp" />
 	<meta property="og:image" content="https://cdn.discordapp.com/emojis/856293187027075072.gif" />
@@ -42,29 +42,25 @@
 	</style>
 </head>
 
+
 <body>
-	<script>
-		function success() {
-    if(document.getElementById("mysterytext").value==="") { 
-              document.getElementById('sendbutton').disabled = true; 
-          } else { 
-              document.getElementById('sendbutton').disabled = false;
-          }
-      }
-	</script>
-	<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-		<div class="page-content w3-animate-top">
-			<h2>
-        DJ Stomp's EzCiphey Tool
-      </h2>
-			<p>
-				<form method="post" action="/">
-					<label for="mysterytext">Enter text to decode: </label><br>
-    <input type="text" id="mysterytext" name="mysterytext" placeholder="Enter your Message..." onkeyup="success()"><br><br>
-    <input type="submit" value="Decipher!" name="sendbutton" id="sendbutton" disabled>
-    </form>
-</p>
-<div>
-</div>
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="page-content w3-animate-top">
+  <h2>
+    EzCiphey: Result
+  </h2>
+  <p>
+    Here's your output from the Ciphey API:<br>
+    {{ cresult }}
+    <br><br>
+    <button id="returnButton" class="float-left submit-button" >Let's go again!</button>
+
+    <script type="text/javascript">
+        document.getElementById("returnButton").onclick = function () {
+            location.href = "/";
+        };
+    </script>
+  </p>
+  </div>
 </body>
 </html>
